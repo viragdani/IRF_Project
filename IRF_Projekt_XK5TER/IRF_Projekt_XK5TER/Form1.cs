@@ -20,6 +20,8 @@ namespace IRF_Projekt_XK5TER
             GetCars();
             
         }
+
+
         public List<Car> GetCars()
         {
             List<Car> carList = new List<Car>();
@@ -46,6 +48,37 @@ namespace IRF_Projekt_XK5TER
                 }
             }
             return carList;
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+            if (panelDropDown.Visible == true)
+            {
+                panelDropDown.Visible = false;
+            }
+            else
+            {
+              panelDropDown.Visible = true;      
+            }
+            
+        }
+
+        private void btnDistribution_Click(object sender, EventArgs e)
+        {
+            //My code...
+            
+        }
+
+        private void btnCorrelation_Click(object sender, EventArgs e)
+        {
+            //My code...
+            
+        }
+
+        private void btnUnknown_Click(object sender, EventArgs e)
+        {
+            //My code...
+            
         }
     }
 }
