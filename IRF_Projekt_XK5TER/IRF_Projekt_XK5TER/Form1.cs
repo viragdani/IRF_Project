@@ -15,11 +15,13 @@ namespace IRF_Projekt_XK5TER
     public partial class Form1 : Form
     {
         public List<Car> carList = new List<Car>();
+        public List<string> Makes = new List<string>();
         Form activeForm = null;
         public Form1()
         {
             InitializeComponent();
             GetCars();
+            GetManufacturers();
             
         }
 
@@ -49,6 +51,20 @@ namespace IRF_Projekt_XK5TER
                 }
             }
         }
+        public void GetManufacturers()
+        {
+
+            using (StreamReader sr = new StreamReader("Files/ListOfManufacturers.csv", Encoding.Default))
+            {
+                while (!sr.EndOfStream)
+                {
+
+                    var line = sr.ReadLine().Split(';');
+                    Makes.Add(line[0]);
+
+                }
+            }
+        }
 
         private void btnStatistics_Click(object sender, EventArgs e)
         {
@@ -67,7 +83,7 @@ namespace IRF_Projekt_XK5TER
         {
             if (activeForm != null) { activeForm.Hide(); }
             panelMain.Controls.Clear();
-            FormDistribution fd = new FormDistribution(carList);
+            FormDistribution fd = new FormDistribution(carList, Makes);
             panelMain.Controls.Add(fd);
             activeForm = fd;
             activeForm.Show();

@@ -32,13 +32,12 @@
             this.btnHelp = new System.Windows.Forms.Button();
             this.btnCalculator = new System.Windows.Forms.Button();
             this.panelDropDown = new System.Windows.Forms.Panel();
-            this.btnUnknown = new System.Windows.Forms.Button();
             this.btnCorrelation = new System.Windows.Forms.Button();
             this.btnDistribution = new System.Windows.Forms.Button();
             this.btnStatistics = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panelSideMenu.SuspendLayout();
             this.panelDropDown.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -57,7 +56,7 @@
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(200, 522);
+            this.panelSideMenu.Size = new System.Drawing.Size(200, 461);
             this.panelSideMenu.TabIndex = 0;
             // 
             // btnHelp
@@ -66,7 +65,7 @@
             this.btnHelp.FlatAppearance.BorderSize = 0;
             this.btnHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHelp.Location = new System.Drawing.Point(0, 335);
+            this.btnHelp.Location = new System.Drawing.Point(0, 290);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(200, 50);
             this.btnHelp.TabIndex = 4;
@@ -79,7 +78,7 @@
             this.btnCalculator.FlatAppearance.BorderSize = 0;
             this.btnCalculator.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.btnCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculator.Location = new System.Drawing.Point(0, 285);
+            this.btnCalculator.Location = new System.Drawing.Point(0, 240);
             this.btnCalculator.Name = "btnCalculator";
             this.btnCalculator.Size = new System.Drawing.Size(200, 50);
             this.btnCalculator.TabIndex = 3;
@@ -89,29 +88,14 @@
             // panelDropDown
             // 
             this.panelDropDown.BackColor = System.Drawing.Color.DimGray;
-            this.panelDropDown.Controls.Add(this.btnUnknown);
             this.panelDropDown.Controls.Add(this.btnCorrelation);
             this.panelDropDown.Controls.Add(this.btnDistribution);
             this.panelDropDown.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelDropDown.Location = new System.Drawing.Point(0, 150);
             this.panelDropDown.Name = "panelDropDown";
-            this.panelDropDown.Size = new System.Drawing.Size(200, 135);
+            this.panelDropDown.Size = new System.Drawing.Size(200, 90);
             this.panelDropDown.TabIndex = 2;
             this.panelDropDown.Visible = false;
-            // 
-            // btnUnknown
-            // 
-            this.btnUnknown.BackColor = System.Drawing.Color.Silver;
-            this.btnUnknown.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUnknown.FlatAppearance.BorderSize = 0;
-            this.btnUnknown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUnknown.Location = new System.Drawing.Point(0, 90);
-            this.btnUnknown.Name = "btnUnknown";
-            this.btnUnknown.Size = new System.Drawing.Size(200, 45);
-            this.btnUnknown.TabIndex = 2;
-            this.btnUnknown.Text = "Unknown";
-            this.btnUnknown.UseVisualStyleBackColor = false;
-            this.btnUnknown.Click += new System.EventHandler(this.btnUnknown_Click);
             // 
             // btnCorrelation
             // 
@@ -164,14 +148,6 @@
             this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 0;
             // 
-            // panelMain
-            // 
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(200, 0);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(522, 522);
-            this.panelMain.TabIndex = 1;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -184,16 +160,25 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // panelMain
+            // 
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(200, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(584, 461);
+            this.panelMain.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(722, 522);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelSideMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(800, 250);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panelSideMenu.ResumeLayout(false);
@@ -208,7 +193,6 @@
 
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Panel panelDropDown;
-        private System.Windows.Forms.Button btnUnknown;
         private System.Windows.Forms.Button btnCorrelation;
         private System.Windows.Forms.Button btnDistribution;
         private System.Windows.Forms.Button btnStatistics;
