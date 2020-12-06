@@ -71,7 +71,6 @@ namespace IRF_Projekt_XK5TER
             panelMain.Controls.Add(fd);
             activeForm = fd;
             activeForm.Show();
-
         }
 
         private void btnCorrelation_Click(object sender, EventArgs e)
