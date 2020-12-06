@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnStatistics = new System.Windows.Forms.Button();
-            this.panelDropDown = new System.Windows.Forms.Panel();
-            this.btnDistribution = new System.Windows.Forms.Button();
-            this.btnCorrelation = new System.Windows.Forms.Button();
-            this.btnUnknown = new System.Windows.Forms.Button();
-            this.btnCalculator = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
+            this.btnCalculator = new System.Windows.Forms.Button();
+            this.panelDropDown = new System.Windows.Forms.Panel();
+            this.btnUnknown = new System.Windows.Forms.Button();
+            this.btnCorrelation = new System.Windows.Forms.Button();
+            this.btnDistribution = new System.Windows.Forms.Button();
+            this.btnStatistics = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             this.panelDropDown.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -56,27 +60,31 @@
             this.panelSideMenu.Size = new System.Drawing.Size(200, 522);
             this.panelSideMenu.TabIndex = 0;
             // 
-            // panel1
+            // btnHelp
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 0;
+            this.btnHelp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHelp.FlatAppearance.BorderSize = 0;
+            this.btnHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelp.Location = new System.Drawing.Point(0, 335);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(200, 50);
+            this.btnHelp.TabIndex = 4;
+            this.btnHelp.Text = "Segítség";
+            this.btnHelp.UseVisualStyleBackColor = true;
             // 
-            // btnStatistics
+            // btnCalculator
             // 
-            this.btnStatistics.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStatistics.FlatAppearance.BorderSize = 0;
-            this.btnStatistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatistics.Location = new System.Drawing.Point(0, 100);
-            this.btnStatistics.Name = "btnStatistics";
-            this.btnStatistics.Size = new System.Drawing.Size(200, 50);
-            this.btnStatistics.TabIndex = 1;
-            this.btnStatistics.Text = "Statisztika";
-            this.btnStatistics.UseVisualStyleBackColor = true;
-            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
+            this.btnCalculator.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCalculator.FlatAppearance.BorderSize = 0;
+            this.btnCalculator.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.btnCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculator.Location = new System.Drawing.Point(0, 285);
+            this.btnCalculator.Name = "btnCalculator";
+            this.btnCalculator.Size = new System.Drawing.Size(200, 50);
+            this.btnCalculator.TabIndex = 3;
+            this.btnCalculator.Text = "Értékkalkulátor";
+            this.btnCalculator.UseVisualStyleBackColor = true;
             // 
             // panelDropDown
             // 
@@ -90,34 +98,6 @@
             this.panelDropDown.Size = new System.Drawing.Size(200, 135);
             this.panelDropDown.TabIndex = 2;
             this.panelDropDown.Visible = false;
-            // 
-            // btnDistribution
-            // 
-            this.btnDistribution.BackColor = System.Drawing.Color.Silver;
-            this.btnDistribution.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDistribution.FlatAppearance.BorderSize = 0;
-            this.btnDistribution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDistribution.Location = new System.Drawing.Point(0, 0);
-            this.btnDistribution.Name = "btnDistribution";
-            this.btnDistribution.Size = new System.Drawing.Size(200, 45);
-            this.btnDistribution.TabIndex = 0;
-            this.btnDistribution.Text = "Megoszlás";
-            this.btnDistribution.UseVisualStyleBackColor = false;
-            this.btnDistribution.Click += new System.EventHandler(this.btnDistribution_Click);
-            // 
-            // btnCorrelation
-            // 
-            this.btnCorrelation.BackColor = System.Drawing.Color.Silver;
-            this.btnCorrelation.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCorrelation.FlatAppearance.BorderSize = 0;
-            this.btnCorrelation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCorrelation.Location = new System.Drawing.Point(0, 45);
-            this.btnCorrelation.Name = "btnCorrelation";
-            this.btnCorrelation.Size = new System.Drawing.Size(200, 45);
-            this.btnCorrelation.TabIndex = 1;
-            this.btnCorrelation.Text = "Korreláció";
-            this.btnCorrelation.UseVisualStyleBackColor = false;
-            this.btnCorrelation.Click += new System.EventHandler(this.btnCorrelation_Click);
             // 
             // btnUnknown
             // 
@@ -133,31 +113,76 @@
             this.btnUnknown.UseVisualStyleBackColor = false;
             this.btnUnknown.Click += new System.EventHandler(this.btnUnknown_Click);
             // 
-            // btnCalculator
+            // btnCorrelation
             // 
-            this.btnCalculator.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCalculator.FlatAppearance.BorderSize = 0;
-            this.btnCalculator.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.btnCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculator.Location = new System.Drawing.Point(0, 285);
-            this.btnCalculator.Name = "btnCalculator";
-            this.btnCalculator.Size = new System.Drawing.Size(200, 50);
-            this.btnCalculator.TabIndex = 3;
-            this.btnCalculator.Text = "Értékkalkulátor";
-            this.btnCalculator.UseVisualStyleBackColor = true;
+            this.btnCorrelation.BackColor = System.Drawing.Color.Silver;
+            this.btnCorrelation.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCorrelation.FlatAppearance.BorderSize = 0;
+            this.btnCorrelation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCorrelation.Location = new System.Drawing.Point(0, 45);
+            this.btnCorrelation.Name = "btnCorrelation";
+            this.btnCorrelation.Size = new System.Drawing.Size(200, 45);
+            this.btnCorrelation.TabIndex = 1;
+            this.btnCorrelation.Text = "Korreláció";
+            this.btnCorrelation.UseVisualStyleBackColor = false;
+            this.btnCorrelation.Click += new System.EventHandler(this.btnCorrelation_Click);
             // 
-            // btnHelp
+            // btnDistribution
             // 
-            this.btnHelp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHelp.FlatAppearance.BorderSize = 0;
-            this.btnHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHelp.Location = new System.Drawing.Point(0, 335);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(200, 50);
-            this.btnHelp.TabIndex = 4;
-            this.btnHelp.Text = "Segítség";
-            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnDistribution.BackColor = System.Drawing.Color.Silver;
+            this.btnDistribution.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDistribution.FlatAppearance.BorderSize = 0;
+            this.btnDistribution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDistribution.Location = new System.Drawing.Point(0, 0);
+            this.btnDistribution.Name = "btnDistribution";
+            this.btnDistribution.Size = new System.Drawing.Size(200, 45);
+            this.btnDistribution.TabIndex = 0;
+            this.btnDistribution.Text = "Megoszlás";
+            this.btnDistribution.UseVisualStyleBackColor = false;
+            this.btnDistribution.Click += new System.EventHandler(this.btnDistribution_Click);
+            // 
+            // btnStatistics
+            // 
+            this.btnStatistics.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStatistics.FlatAppearance.BorderSize = 0;
+            this.btnStatistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistics.Location = new System.Drawing.Point(0, 100);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Size = new System.Drawing.Size(200, 50);
+            this.btnStatistics.TabIndex = 1;
+            this.btnStatistics.Text = "Statisztika";
+            this.btnStatistics.UseVisualStyleBackColor = true;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 0;
+            // 
+            // panelMain
+            // 
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(200, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(522, 522);
+            this.panelMain.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::IRF_Projekt_XK5TER.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -165,13 +190,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(722, 522);
+            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelSideMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panelSideMenu.ResumeLayout(false);
             this.panelDropDown.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,6 +215,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Button btnCalculator;
+        private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

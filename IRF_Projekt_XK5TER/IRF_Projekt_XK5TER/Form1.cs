@@ -14,6 +14,8 @@ namespace IRF_Projekt_XK5TER
 {
     public partial class Form1 : Form
     {
+        public List<Car> carList = new List<Car>();
+        Form activeForm = null;
         public Form1()
         {
             InitializeComponent();
@@ -22,9 +24,8 @@ namespace IRF_Projekt_XK5TER
         }
 
 
-        public List<Car> GetCars()
+        public void GetCars()
         {
-            List<Car> carList = new List<Car>();
 
             using (StreamReader sr = new StreamReader("Files/cars.csv", Encoding.Default))
             {
@@ -47,7 +48,6 @@ namespace IRF_Projekt_XK5TER
 
                 }
             }
-            return carList;
         }
 
         private void btnStatistics_Click(object sender, EventArgs e)
@@ -65,14 +65,24 @@ namespace IRF_Projekt_XK5TER
 
         private void btnDistribution_Click(object sender, EventArgs e)
         {
-            //My code...
-            
+            if (activeForm != null) { activeForm.Hide(); }
+            panelMain.Controls.Clear();
+            FormDistribution fd = new FormDistribution(carList);
+            panelMain.Controls.Add(fd);
+            activeForm = fd;
+            activeForm.Show();
+
         }
 
         private void btnCorrelation_Click(object sender, EventArgs e)
         {
-            //My code...
-            
+            if (activeForm != null) { activeForm.Hide(); }
+            panelMain.Controls.Clear();
+            FormCorrelation fc = new FormCorrelation();
+            panelMain.Controls.Add(fc);
+            activeForm = fc;
+            activeForm.Show();
+
         }
 
         private void btnUnknown_Click(object sender, EventArgs e)
