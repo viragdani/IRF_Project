@@ -93,7 +93,8 @@ namespace IRF_Projekt_XK5TER
         {
             if (activeForm != null) { activeForm.Hide(); }
             panelMain.Controls.Clear();
-            FormCorrelation fc = new FormCorrelation();
+
+            FormCorrelation fc = new FormCorrelation(carList);
             panelMain.Controls.Add(fc);
             activeForm = fc;
             activeForm.Show();
