@@ -106,6 +106,17 @@ namespace IRF_Projekt_XK5TER
             //My code...
             
         }
+
+        private void btnCalculator_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null) { activeForm.Hide(); }
+            panelMain.Controls.Clear();
+
+            FormCalculator fc2 = new FormCalculator(carList);
+            panelMain.Controls.Add(fc2);
+            activeForm = fc2;
+            activeForm.Show();
+        }
     }
 }
 

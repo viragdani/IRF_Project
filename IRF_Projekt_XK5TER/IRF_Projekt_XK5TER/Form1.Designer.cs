@@ -84,6 +84,7 @@
             this.btnCalculator.TabIndex = 3;
             this.btnCalculator.Text = "Értékkalkulátor";
             this.btnCalculator.UseVisualStyleBackColor = true;
+            this.btnCalculator.Click += new System.EventHandler(this.btnCalculator_Click);
             // 
             // panelDropDown
             // 
