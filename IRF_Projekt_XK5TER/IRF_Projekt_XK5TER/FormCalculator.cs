@@ -39,6 +39,7 @@ namespace IRF_Projekt_XK5TER
             TopLevel = false;
             FormBorderStyle = FormBorderStyle.None;
             Dock = DockStyle.Fill;
+            MessageBox.Show("Kérjük, vegye figyelembe, hogy a becslés a 2019-ben hirdetett hasonló paraméterű autók alapján számítódik!"+Environment.NewLine+ Environment.NewLine + "A valós érték eltérhet többek közt az idő, felszereltség, kondíció és futásteljesítmény függvényében.");
 
         }
         private void GetMakes()
@@ -169,6 +170,38 @@ namespace IRF_Projekt_XK5TER
             comboBoxEngV.DataSource = Engines;
         }
 
+        private void buttonCalc_Click(object sender, EventArgs e)
+        {
+            revealLabels();
+            var darabszam = (from n in carList
+                             where n.Make == comboBoxMake.SelectedItem.ToString()
+                             where n.Model == comboBoxModel.SelectedItem.ToString()
+                             where n.Year == int.Parse(comboBoxYear.SelectedItem.ToString())
+                             where n.Fuel == comboBoxFuel.SelectedItem.ToString()
+                             where n.EngV == decimal.Parse(comboBoxEngV.SelectedItem.ToString())
+                             select n).Count();
+
+           var atlag = (from n in carList
+                               where n.Make == comboBoxMake.SelectedItem.ToString()
+                               where n.Model == comboBoxModel.SelectedItem.ToString()
+                               where n.Year == int.Parse(comboBoxYear.SelectedItem.ToString())
+                               where n.Fuel == comboBoxFuel.SelectedItem.ToString()
+                               where n.EngV == decimal.Parse(comboBoxEngV.SelectedItem.ToString())
+                               select n.Price).Average();
+            labelCount.Text = darabszam.ToString() + " db";
+            labelValueUSD.Text = atlag.ToString("### ### ### ###") + " USD";
+            labelValueFT.Text = (atlag * 300).ToString("### ### ### ###") + " HUF";
+
+            
+        }
+        private void revealLabels()
+        {
+            label2.Visible = true;
+            label3.Visible = true;
+            labelCount.Visible = true;
+            labelValueUSD.Visible = true;
+            labelValueFT.Visible = true;
+        }
     }
 
 }

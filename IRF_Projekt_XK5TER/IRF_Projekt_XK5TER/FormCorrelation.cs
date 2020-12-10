@@ -264,7 +264,7 @@ namespace IRF_Projekt_XK5TER
 
                 var result = sum1 / Math.Sqrt(sumSqr1 * sumSqr2);
 
-                labelCorr.Text = result.ToString();
+                labelCorr.Text = "P-érték= "+Math.Round(result,4).ToString();
                 if (Math.Abs(result) >= 0 && Math.Abs(result)<=0.29)
                 {
                     labelTxtResult.Text = "Gyenge korreláció";

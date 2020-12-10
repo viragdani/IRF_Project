@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.comboBoxFilter = new System.Windows.Forms.ComboBox();
             this.labelFiltered = new System.Windows.Forms.Label();
@@ -38,28 +38,31 @@
             this.comboBoxFiltertype = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chart1
             // 
             this.chart1.BorderlineColor = System.Drawing.Color.Black;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(129, 80);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.chart1.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.Tomato,
         System.Drawing.Color.WhiteSmoke};
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(285, 236);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(523, 333);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             // 
@@ -80,6 +83,7 @@
             this.labelFiltered.Size = new System.Drawing.Size(35, 13);
             this.labelFiltered.TabIndex = 6;
             this.labelFiltered.Text = "label1";
+            this.labelFiltered.Visible = false;
             // 
             // labelOthers
             // 
@@ -89,6 +93,7 @@
             this.labelOthers.Size = new System.Drawing.Size(35, 13);
             this.labelOthers.TabIndex = 7;
             this.labelOthers.Text = "label2";
+            this.labelOthers.Visible = false;
             // 
             // comboBoxFiltertype
             // 
@@ -122,22 +127,32 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Feltétel";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.chart1);
+            this.panel1.Location = new System.Drawing.Point(129, 69);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(523, 333);
+            this.panel1.TabIndex = 11;
+            // 
             // FormDistribution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxFiltertype);
             this.Controls.Add(this.labelOthers);
             this.Controls.Add(this.labelFiltered);
             this.Controls.Add(this.comboBoxFilter);
-            this.Controls.Add(this.chart1);
             this.Name = "FormDistribution";
             this.Text = "FormDistribution";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,5 +166,6 @@
         private System.Windows.Forms.ComboBox comboBoxFiltertype;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

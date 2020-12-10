@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.labelX = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -45,7 +44,7 @@
             // labelX
             // 
             this.labelX.AutoSize = true;
-            this.labelX.Location = new System.Drawing.Point(85, 23);
+            this.labelX.Location = new System.Drawing.Point(47, 23);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(17, 13);
             this.labelX.TabIndex = 0;
@@ -55,13 +54,10 @@
             // 
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(15, 63);
+            this.chart1.Location = new System.Drawing.Point(-5, 63);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(673, 300);
@@ -76,7 +72,7 @@
             "Price",
             "EngV",
             "Year"});
-            this.comboBoxX.Location = new System.Drawing.Point(108, 20);
+            this.comboBoxX.Location = new System.Drawing.Point(70, 20);
             this.comboBoxX.Name = "comboBoxX";
             this.comboBoxX.Size = new System.Drawing.Size(121, 21);
             this.comboBoxX.TabIndex = 3;
@@ -90,7 +86,7 @@
             "Price",
             "EngV",
             "Year"});
-            this.comboBoxY.Location = new System.Drawing.Point(291, 20);
+            this.comboBoxY.Location = new System.Drawing.Point(253, 20);
             this.comboBoxY.Name = "comboBoxY";
             this.comboBoxY.Size = new System.Drawing.Size(121, 21);
             this.comboBoxY.TabIndex = 4;
@@ -99,7 +95,7 @@
             // labelY
             // 
             this.labelY.AutoSize = true;
-            this.labelY.Location = new System.Drawing.Point(268, 23);
+            this.labelY.Location = new System.Drawing.Point(230, 23);
             this.labelY.Name = "labelY";
             this.labelY.Size = new System.Drawing.Size(17, 13);
             this.labelY.TabIndex = 5;
@@ -108,7 +104,7 @@
             // labelCorr
             // 
             this.labelCorr.AutoSize = true;
-            this.labelCorr.Location = new System.Drawing.Point(564, 28);
+            this.labelCorr.Location = new System.Drawing.Point(526, 28);
             this.labelCorr.Name = "labelCorr";
             this.labelCorr.Size = new System.Drawing.Size(0, 13);
             this.labelCorr.TabIndex = 6;
@@ -116,7 +112,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(449, 23);
+            this.label1.Location = new System.Drawing.Point(411, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 7;
@@ -125,7 +121,7 @@
             // labelTxtResult
             // 
             this.labelTxtResult.AutoSize = true;
-            this.labelTxtResult.Location = new System.Drawing.Point(555, 47);
+            this.labelTxtResult.Location = new System.Drawing.Point(517, 47);
             this.labelTxtResult.Name = "labelTxtResult";
             this.labelTxtResult.Size = new System.Drawing.Size(0, 13);
             this.labelTxtResult.TabIndex = 8;
@@ -134,6 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.labelTxtResult);

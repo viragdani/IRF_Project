@@ -39,6 +39,12 @@
             this.comboBoxYear = new System.Windows.Forms.ComboBox();
             this.comboBoxFuel = new System.Windows.Forms.ComboBox();
             this.comboBoxEngV = new System.Windows.Forms.ComboBox();
+            this.buttonCalc = new System.Windows.Forms.Button();
+            this.labelCount = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelValueUSD = new System.Windows.Forms.Label();
+            this.labelValueFT = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -139,11 +145,78 @@
             this.comboBoxEngV.Size = new System.Drawing.Size(121, 21);
             this.comboBoxEngV.TabIndex = 10;
             // 
+            // buttonCalc
+            // 
+            this.buttonCalc.Location = new System.Drawing.Point(121, 217);
+            this.buttonCalc.Name = "buttonCalc";
+            this.buttonCalc.Size = new System.Drawing.Size(75, 23);
+            this.buttonCalc.TabIndex = 11;
+            this.buttonCalc.Text = "Számítás";
+            this.buttonCalc.UseVisualStyleBackColor = true;
+            this.buttonCalc.Click += new System.EventHandler(this.buttonCalc_Click);
+            // 
+            // labelCount
+            // 
+            this.labelCount.AutoSize = true;
+            this.labelCount.Location = new System.Drawing.Point(277, 280);
+            this.labelCount.Name = "labelCount";
+            this.labelCount.Size = new System.Drawing.Size(33, 13);
+            this.labelCount.TabIndex = 12;
+            this.labelCount.Text = "Label";
+            this.labelCount.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 280);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(192, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Hasonló autók száma az adatbázisban:";
+            this.label2.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 315);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Becsült érték:";
+            this.label3.Visible = false;
+            // 
+            // labelValueUSD
+            // 
+            this.labelValueUSD.AutoSize = true;
+            this.labelValueUSD.Location = new System.Drawing.Point(277, 315);
+            this.labelValueUSD.Name = "labelValueUSD";
+            this.labelValueUSD.Size = new System.Drawing.Size(33, 13);
+            this.labelValueUSD.TabIndex = 15;
+            this.labelValueUSD.Text = "Label";
+            this.labelValueUSD.Visible = false;
+            // 
+            // labelValueFT
+            // 
+            this.labelValueFT.AutoSize = true;
+            this.labelValueFT.Location = new System.Drawing.Point(277, 339);
+            this.labelValueFT.Name = "labelValueFT";
+            this.labelValueFT.Size = new System.Drawing.Size(33, 13);
+            this.labelValueFT.TabIndex = 16;
+            this.labelValueFT.Text = "Label";
+            this.labelValueFT.Visible = false;
+            // 
             // FormCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelValueFT);
+            this.Controls.Add(this.labelValueUSD);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelCount);
+            this.Controls.Add(this.buttonCalc);
             this.Controls.Add(this.comboBoxEngV);
             this.Controls.Add(this.comboBoxFuel);
             this.Controls.Add(this.comboBoxYear);
@@ -175,5 +248,11 @@
         private System.Windows.Forms.ComboBox comboBoxYear;
         private System.Windows.Forms.ComboBox comboBoxFuel;
         private System.Windows.Forms.ComboBox comboBoxEngV;
+        private System.Windows.Forms.Button buttonCalc;
+        private System.Windows.Forms.Label labelCount;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelValueUSD;
+        private System.Windows.Forms.Label labelValueFT;
     }
 }

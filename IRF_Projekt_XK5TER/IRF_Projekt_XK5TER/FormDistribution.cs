@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace IRF_Projekt_XK5TER
 {
@@ -34,10 +35,19 @@ namespace IRF_Projekt_XK5TER
 
         private void comboBoxFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxFiltertype.SelectedIndex==0) {ShowFilteredMake();}
-            if (comboBoxFiltertype.SelectedIndex == 1) { ShowFilteredBody(); }
-            if (comboBoxFiltertype.SelectedIndex == 2) { ShowFilteredFuel(); }
-            if (comboBoxFiltertype.SelectedIndex == 3) { ShowFilteredDrivetrain(); }
+            if (comboBoxFilter.SelectedItem!=null)
+            {
+            labelFiltered.Visible = true;
+                        labelOthers.Visible = true;
+                        if (comboBoxFiltertype.SelectedIndex==0) {ShowFilteredMake();}
+                        if (comboBoxFiltertype.SelectedIndex == 1) { ShowFilteredBody(); }
+                        if (comboBoxFiltertype.SelectedIndex == 2) { ShowFilteredFuel(); }
+                        if (comboBoxFiltertype.SelectedIndex == 3) { ShowFilteredDrivetrain(); }
+                        chart1.Series["Series1"].Label = "#PERCENT";
+                        chart1.Series["Series1"].Points[0].LegendText = comboBoxFilter.SelectedItem.ToString();
+                        chart1.Series["Series1"].Points[1].LegendText = "Egyéb";
+            }
+            
         }
 
 
