@@ -71,6 +71,7 @@
             this.btnHelp.TabIndex = 4;
             this.btnHelp.Text = "Segítség";
             this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // btnCalculator
             // 
@@ -166,7 +167,7 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(200, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(884, 511);
+            this.panelMain.Size = new System.Drawing.Size(889, 511);
             this.panelMain.TabIndex = 1;
             // 
             // Form1
@@ -175,7 +176,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1084, 511);
+            this.ClientSize = new System.Drawing.Size(1089, 511);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelSideMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));

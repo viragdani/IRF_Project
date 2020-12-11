@@ -16,6 +16,7 @@ namespace IRF_Projekt_XK5TER
     {
         List<Car> carList = new List<Car>();
         List<string> Makes = new List<string>();
+        ClearButton cb = new ClearButton();
         public FormDistribution(List<Car> cars, List<string> makes)
         {
             InitializeComponent();
@@ -30,7 +31,16 @@ namespace IRF_Projekt_XK5TER
             TopLevel = false;
             FormBorderStyle = FormBorderStyle.None;
             Dock = DockStyle.Fill;
+            
+            panel1.Controls.Add(cb);
+            cb.MouseClick += Cb_MouseClick;
+        }
 
+        private void Cb_MouseClick(object sender, MouseEventArgs e)
+        {
+            comboBoxFiltertype.SelectedItem = null;
+            comboBoxFilter.SelectedItem = null;
+            chart1.Series["Series1"].Points.Clear();
         }
 
         private void comboBoxFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,5 +160,6 @@ namespace IRF_Projekt_XK5TER
                 labelOthers.Text = "Egyéb: " + (carList.Count - filtered).ToString();
             }
         }
+        
     }
 }

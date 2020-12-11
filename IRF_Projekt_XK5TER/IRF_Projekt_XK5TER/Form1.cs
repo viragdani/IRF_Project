@@ -22,7 +22,7 @@ namespace IRF_Projekt_XK5TER
             InitializeComponent();
             GetCars();
             GetManufacturers();
-            
+            Text = "CarMarketAnalyser";
         }
 
 
@@ -101,11 +101,6 @@ namespace IRF_Projekt_XK5TER
 
         }
 
-        private void btnUnknown_Click(object sender, EventArgs e)
-        {
-            //My code...
-            
-        }
 
         private void btnCalculator_Click(object sender, EventArgs e)
         {
@@ -115,6 +110,17 @@ namespace IRF_Projekt_XK5TER
             FormCalculator fc2 = new FormCalculator(carList);
             panelMain.Controls.Add(fc2);
             activeForm = fc2;
+            activeForm.Show();
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null) { activeForm.Hide(); }
+            panelMain.Controls.Clear();
+
+            FormHelp fh = new FormHelp();
+            panelMain.Controls.Add(fh);
+            activeForm = fh;
             activeForm.Show();
         }
     }

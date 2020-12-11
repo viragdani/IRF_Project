@@ -130,7 +130,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.chart1);
-            this.panel1.Location = new System.Drawing.Point(129, 69);
+            this.panel1.Location = new System.Drawing.Point(80, 70);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(523, 333);
             this.panel1.TabIndex = 11;

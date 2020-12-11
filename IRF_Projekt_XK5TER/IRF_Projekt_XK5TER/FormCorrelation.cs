@@ -19,6 +19,7 @@ namespace IRF_Projekt_XK5TER
         List<double> values2 = new List<double>();
         string filterX;
         string filterY;
+        ClearButton cb = new ClearButton();
         public FormCorrelation(List<Car> cars)
         {
             InitializeComponent();
@@ -31,9 +32,18 @@ namespace IRF_Projekt_XK5TER
             TopLevel = false;
             FormBorderStyle = FormBorderStyle.None;
             Dock = DockStyle.Fill;
-
+            panel1.Controls.Add(cb);
+            cb.MouseClick += Cb_MouseClick;
         }
 
+        private void Cb_MouseClick(object sender, MouseEventArgs e)
+        {
+            comboBoxX.SelectedItem = null;
+            comboBoxY.SelectedItem = null;
+            labelCorr.Text = null;
+            labelTxtResult.Text = null;
+            chart1.Series["Series1"].Points.Clear();
+        }
 
         private void comboBoxX_SelectedIndexChanged(object sender, EventArgs e)
         {
