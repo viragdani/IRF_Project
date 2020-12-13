@@ -147,6 +147,7 @@
             // 
             // buttonCalc
             // 
+            this.buttonCalc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCalc.Location = new System.Drawing.Point(121, 217);
             this.buttonCalc.Name = "buttonCalc";
             this.buttonCalc.Size = new System.Drawing.Size(75, 23);

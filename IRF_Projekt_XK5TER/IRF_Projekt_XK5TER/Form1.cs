@@ -22,10 +22,22 @@ namespace IRF_Projekt_XK5TER
             InitializeComponent();
             GetCars();
             GetManufacturers();
-            Text = "CarMarketAnalyser";
+            FormDesign();
         }
 
-
+        private void FormDesign()
+        {
+            this.BackColor = Color.FromArgb(232, 238, 242);
+            panelSideMenu.BackColor = Color.FromArgb(70, 70, 85);
+            btnStatistics.BackColor = Color.FromArgb(70, 70, 85);
+            btnStatistics.ForeColor = Color.WhiteSmoke;
+            btnCalculator.BackColor = Color.FromArgb(70, 70, 85);
+            btnCalculator.ForeColor = Color.WhiteSmoke;
+            btnHelp.BackColor = Color.FromArgb(70, 70, 85);
+            btnHelp.ForeColor = Color.WhiteSmoke;
+            btnDistribution.BackColor = Color.FromArgb(199, 211, 221);
+            btnCorrelation.BackColor = Color.FromArgb(199, 211, 221);
+        }
         public void GetCars()
         {
 
@@ -54,16 +66,16 @@ namespace IRF_Projekt_XK5TER
         public void GetManufacturers()
         {
 
-            using (StreamReader sr = new StreamReader("Files/ListOfManufacturers.csv", Encoding.Default))
+            Makes.Clear();
+
+            foreach (var car in carList)
             {
-                while (!sr.EndOfStream)
+                if (Makes.Contains(car.Make) == false)
                 {
-
-                    var line = sr.ReadLine().Split(';');
-                    Makes.Add(line[0]);
-
+                    Makes.Add(car.Make);
                 }
             }
+            
         }
 
         private void btnStatistics_Click(object sender, EventArgs e)
@@ -81,7 +93,7 @@ namespace IRF_Projekt_XK5TER
 
         private void btnDistribution_Click(object sender, EventArgs e)
         {
-            if (activeForm != null) { activeForm.Hide(); }
+            if (activeForm != null) activeForm.Hide();
             panelMain.Controls.Clear();
             FormDistribution fd = new FormDistribution(carList, Makes);
             panelMain.Controls.Add(fd);
@@ -91,7 +103,7 @@ namespace IRF_Projekt_XK5TER
 
         private void btnCorrelation_Click(object sender, EventArgs e)
         {
-            if (activeForm != null) { activeForm.Hide(); }
+            if (activeForm != null) activeForm.Hide();
             panelMain.Controls.Clear();
 
             FormCorrelation fc = new FormCorrelation(carList);
@@ -104,10 +116,9 @@ namespace IRF_Projekt_XK5TER
 
         private void btnCalculator_Click(object sender, EventArgs e)
         {
-            if (activeForm != null) { activeForm.Hide(); }
+            if (activeForm != null) activeForm.Hide();
             panelMain.Controls.Clear();
-
-            FormCalculator fc2 = new FormCalculator(carList);
+            FormCalculator fc2 = new FormCalculator(carList, Makes);
             panelMain.Controls.Add(fc2);
             activeForm = fc2;
             activeForm.Show();
@@ -115,14 +126,14 @@ namespace IRF_Projekt_XK5TER
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            if (activeForm != null) { activeForm.Hide(); }
+            if (activeForm != null) activeForm.Hide();
             panelMain.Controls.Clear();
-
             FormHelp fh = new FormHelp();
             panelMain.Controls.Add(fh);
             activeForm = fh;
             activeForm.Show();
         }
+
     }
 }
 

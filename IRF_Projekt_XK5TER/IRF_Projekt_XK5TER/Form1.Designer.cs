@@ -183,7 +183,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(800, 250);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "CarMarketAnalyser";
             this.panelSideMenu.ResumeLayout(false);
             this.panelDropDown.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

@@ -16,7 +16,7 @@ namespace IRF_Projekt_XK5TER
     {
         List<Car> carList = new List<Car>();
         List<string> Makes = new List<string>();
-        ClearButton cb = new ClearButton();
+        CustomButton cb = new CustomButton();
         public FormDistribution(List<Car> cars, List<string> makes)
         {
             InitializeComponent();
@@ -31,7 +31,9 @@ namespace IRF_Projekt_XK5TER
             TopLevel = false;
             FormBorderStyle = FormBorderStyle.None;
             Dock = DockStyle.Fill;
-            
+            this.BackColor = Color.FromArgb(232, 238, 242);
+            chart1.ChartAreas[0].BackColor = Color.FromArgb(232, 238, 242);
+            chart1.BackColor=Color.FromArgb(232, 238, 242);
             panel1.Controls.Add(cb);
             cb.MouseClick += Cb_MouseClick;
         }
@@ -56,6 +58,8 @@ namespace IRF_Projekt_XK5TER
                         chart1.Series["Series1"].Label = "#PERCENT";
                         chart1.Series["Series1"].Points[0].LegendText = comboBoxFilter.SelectedItem.ToString();
                         chart1.Series["Series1"].Points[1].LegendText = "Egyéb";
+                chart1.Series["Series1"].Points[0].Color = Color.FromArgb(119, 182, 234);
+                chart1.Series["Series1"].Points[1].Color = Color.FromArgb(199, 211, 221);
             }
             
         }

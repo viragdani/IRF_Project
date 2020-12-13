@@ -24,12 +24,13 @@ namespace IRF_Projekt_XK5TER
         List<Car> FilteredByFuel = new List<Car>();
         List<string> Engines = new List<string>();
 
-        public FormCalculator(List<Car> cars)
+        public FormCalculator(List<Car> cars, List<string> makes)
         {
             InitializeComponent();
             Formdesign();
             carList = cars;
-            GetMakes();
+            Makes = makes;
+            FillMakes();
             
         }
 
@@ -39,21 +40,14 @@ namespace IRF_Projekt_XK5TER
             TopLevel = false;
             FormBorderStyle = FormBorderStyle.None;
             Dock = DockStyle.Fill;
+            this.BackColor = Color.FromArgb(232, 238, 242);
+            buttonCalc.BackColor = Color.FromArgb(199, 211, 221);
+            buttonCalc.FlatAppearance.BorderColor = Color.FromArgb(119, 182, 234);
             MessageBox.Show("Kérjük, vegye figyelembe, hogy a becslés a 2019-ben hirdetett hasonló paraméterű autók alapján számítódik!"+Environment.NewLine+ Environment.NewLine + "A valós érték eltérhet többek közt az idő, felszereltség, kondíció és futásteljesítmény függvényében.");
 
         }
-        private void GetMakes()
+        private void FillMakes()
         {
-
-            Makes.Clear();
-            
-            foreach (var car in carList)
-            {
-                if (Makes.Contains(car.Make)==false)
-                {
-                    Makes.Add(car.Make);
-                }
-            }
             comboBoxMake.DataSource = Makes;
         }
 

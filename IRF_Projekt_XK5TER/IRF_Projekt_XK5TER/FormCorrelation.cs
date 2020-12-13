@@ -19,7 +19,7 @@ namespace IRF_Projekt_XK5TER
         List<double> values2 = new List<double>();
         string filterX;
         string filterY;
-        ClearButton cb = new ClearButton();
+        CustomButton cb = new CustomButton();
         public FormCorrelation(List<Car> cars)
         {
             InitializeComponent();
@@ -32,6 +32,9 @@ namespace IRF_Projekt_XK5TER
             TopLevel = false;
             FormBorderStyle = FormBorderStyle.None;
             Dock = DockStyle.Fill;
+            this.BackColor = Color.FromArgb(232, 238, 242);
+            chart1.ChartAreas[0].BackColor = Color.FromArgb(232, 238, 242);
+            chart1.BackColor = Color.FromArgb(232, 238, 242);
             panel1.Controls.Add(cb);
             cb.MouseClick += Cb_MouseClick;
         }
@@ -201,6 +204,7 @@ namespace IRF_Projekt_XK5TER
                 }
 
                 CalculateCorrelation();
+                
             }
 
         }
@@ -256,6 +260,7 @@ namespace IRF_Projekt_XK5TER
                     chart1.ChartAreas[0].AxisY.Maximum = 2020;
                     chart1.ChartAreas[0].AxisY.Interval = 5;
                 }
+                chart1.Series["Series1"].Color = Color.FromArgb(119, 182, 234);
             }
             
         }
@@ -290,8 +295,8 @@ namespace IRF_Projekt_XK5TER
             }
             else 
             { 
-                labelCorr.Text = "";
-                labelTxtResult.Text = "";
+                labelCorr.Text = null;
+                labelTxtResult.Text = null;
             }
             
         }

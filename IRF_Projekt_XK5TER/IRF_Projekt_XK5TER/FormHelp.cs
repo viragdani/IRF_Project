@@ -23,6 +23,7 @@ namespace IRF_Projekt_XK5TER
             TopLevel = false;
             FormBorderStyle = FormBorderStyle.None;
             Dock = DockStyle.Fill;
+            this.BackColor = Color.FromArgb(232, 238, 242);
         }
     }
 }

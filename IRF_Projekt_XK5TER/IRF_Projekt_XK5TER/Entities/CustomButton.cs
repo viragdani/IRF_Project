@@ -8,15 +8,16 @@ using System.Windows.Forms;
 
 namespace IRF_Projekt_XK5TER.Entities
 {
-    public class ClearButton : Button
+    public class CustomButton : Button
     {
-        public ClearButton()
+        public CustomButton()
         {
             Text = "Alaphelyzet";
             FlatStyle = FlatStyle.Flat;
-            FlatAppearance.BorderColor = Color.Red;
+            FlatAppearance.BorderColor = Color.FromArgb(119, 182, 234);
             Dock = DockStyle.Bottom;
-            BackColor = Color.WhiteSmoke;
+
+            BackColor = Color.FromArgb(199, 211, 221);
             
         }
 
