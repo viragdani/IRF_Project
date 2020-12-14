@@ -23,11 +23,11 @@ namespace IRF_Projekt_XK5TER
             Formdesign();
             carList = cars;
             Makes = makes;
+
             
         }
         private void Formdesign()
         {
-
             TopLevel = false;
             FormBorderStyle = FormBorderStyle.None;
             Dock = DockStyle.Fill;
@@ -43,27 +43,33 @@ namespace IRF_Projekt_XK5TER
             comboBoxFiltertype.SelectedItem = null;
             comboBoxFilter.SelectedItem = null;
             chart1.Series["Series1"].Points.Clear();
+            labelFiltered.Text = null;
+            labelOthers.Text = null;
         }
 
         private void comboBoxFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxFilter.SelectedItem!=null)
             {
-            labelFiltered.Visible = true;
-                        labelOthers.Visible = true;
-                        if (comboBoxFiltertype.SelectedIndex==0) {ShowFilteredMake();}
-                        if (comboBoxFiltertype.SelectedIndex == 1) { ShowFilteredBody(); }
-                        if (comboBoxFiltertype.SelectedIndex == 2) { ShowFilteredFuel(); }
-                        if (comboBoxFiltertype.SelectedIndex == 3) { ShowFilteredDrivetrain(); }
-                        chart1.Series["Series1"].Label = "#PERCENT";
-                        chart1.Series["Series1"].Points[0].LegendText = comboBoxFilter.SelectedItem.ToString();
-                        chart1.Series["Series1"].Points[1].LegendText = "Egyéb";
-                chart1.Series["Series1"].Points[0].Color = Color.FromArgb(119, 182, 234);
-                chart1.Series["Series1"].Points[1].Color = Color.FromArgb(199, 211, 221);
+                labelFiltered.Visible = true;
+                labelOthers.Visible = true;
+                if (comboBoxFiltertype.SelectedIndex==0) { ShowFilteredMake(); }
+                if (comboBoxFiltertype.SelectedIndex == 1) { ShowFilteredBody(); }
+                if (comboBoxFiltertype.SelectedIndex == 2) { ShowFilteredFuel(); }
+                if (comboBoxFiltertype.SelectedIndex == 3) { ShowFilteredDrivetrain(); }
+                FormatDiagram();
             }
             
         }
 
+        private void FormatDiagram()
+        {
+            chart1.Series["Series1"].Label = "#PERCENT";
+            chart1.Series["Series1"].Points[0].LegendText = comboBoxFilter.SelectedItem.ToString();
+            chart1.Series["Series1"].Points[1].LegendText = "Egyéb";
+            chart1.Series["Series1"].Points[0].Color = Color.FromArgb(119, 182, 234);
+            chart1.Series["Series1"].Points[1].Color = Color.FromArgb(199, 211, 221);
+        }
 
         private void comboBoxFiltertype_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -77,29 +83,41 @@ namespace IRF_Projekt_XK5TER
             if (comboBoxFiltertype.SelectedIndex == 1)
             {
                 comboBoxFilter.Items.Clear();
-                comboBoxFilter.Items.Add("crossover");
-                comboBoxFilter.Items.Add("sedan");
-                comboBoxFilter.Items.Add("hatch");
-                comboBoxFilter.Items.Add("vagon");
-                comboBoxFilter.Items.Add("van");
-                comboBoxFilter.Items.Add("other");
+                FillBody();
             }
             if (comboBoxFiltertype.SelectedIndex == 2)
             {
                 comboBoxFilter.Items.Clear();
-                comboBoxFilter.Items.Add("Petrol");
-                comboBoxFilter.Items.Add("Gas");
-                comboBoxFilter.Items.Add("Diesel");
+                FillFuel();
             }
             if (comboBoxFiltertype.SelectedIndex == 3)
             {
                 comboBoxFilter.Items.Clear();
-                comboBoxFilter.Items.Add("FWD");
-                comboBoxFilter.Items.Add("RWD");
-                comboBoxFilter.Items.Add("AWD");
+                FillDrive();
             }
         }
-        
+        private void FillBody()
+        {
+            comboBoxFilter.Items.Add("crossover");
+            comboBoxFilter.Items.Add("sedan");
+            comboBoxFilter.Items.Add("hatch");
+            comboBoxFilter.Items.Add("vagon");
+            comboBoxFilter.Items.Add("van");
+            comboBoxFilter.Items.Add("other");
+        }
+        private void FillFuel()
+        {
+            comboBoxFilter.Items.Add("Petrol");
+            comboBoxFilter.Items.Add("Gas");
+            comboBoxFilter.Items.Add("Diesel");
+            comboBoxFilter.Items.Add("Other");
+        }
+        private void FillDrive()
+        {
+            comboBoxFilter.Items.Add("FWD");
+            comboBoxFilter.Items.Add("RWD");
+            comboBoxFilter.Items.Add("AWD");
+        }
         private void ShowFilteredMake()
         {
             if (comboBoxFilter.SelectedItem != null)

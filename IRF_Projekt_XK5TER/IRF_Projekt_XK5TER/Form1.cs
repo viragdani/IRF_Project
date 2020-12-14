@@ -88,7 +88,6 @@ namespace IRF_Projekt_XK5TER
             {
               panelDropDown.Visible = true;      
             }
-            
         }
 
         private void btnDistribution_Click(object sender, EventArgs e)
@@ -110,7 +109,6 @@ namespace IRF_Projekt_XK5TER
             panelMain.Controls.Add(fc);
             activeForm = fc;
             activeForm.Show();
-
         }
 
 
